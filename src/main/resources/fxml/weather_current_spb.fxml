@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="408.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ControllerCurrentSpb">
+   <children>
+      <ImageView fitHeight="511.0" fitWidth="409.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/back_here.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="5.0" layoutY="-1.0" prefHeight="145.0" prefWidth="399.0">
+         <children>
+            <Text fx:id="cityName" fill="#000000" layoutX="-1.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ПИТЕР" textAlignment="CENTER" wrappingWidth="399.0">
+               <font>
+                  <Font name="Times New Roman Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fx:id="data_time" fill="#000000" layoutX="-1.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="399.0">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="to_return" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" text="&lt;&lt; назад">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="22.0" layoutY="145.0" prefHeight="250.0" prefWidth="252.0">
+         <children>
+            <Text fx:id="temp_info" fill="#000000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fx:id="description" fill="#000000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fx:id="wind_info" fill="#000000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fx:id="sunrise" fill="#000000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fill="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fx:id="sunset" fill="#000000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

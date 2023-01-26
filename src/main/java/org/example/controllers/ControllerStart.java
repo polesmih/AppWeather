@@ -39,7 +39,8 @@ public class ControllerStart {
         getRunningTime();
 
         getSpb.setOnAction(e -> {
-            showWarn();
+            getSpb.getScene().getWindow().hide();
+            OpenScene.openScene("/fxml/weather_current_spb.fxml");
         });
 
         getWorld.setOnAction(e -> {
