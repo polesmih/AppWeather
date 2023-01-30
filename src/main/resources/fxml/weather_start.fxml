@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ControllerStart">
+   <children>
+      <ImageView fitHeight="552.0" fitWidth="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/back_start.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutY="-1.0" prefHeight="135.0" prefWidth="406.0">
+         <children>
+            <Text fx:id="current_date" fill="#54676b" layoutX="24.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="137.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="current_time" fill="#54676b" layoutX="248.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="137.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fill="#54676b" layoutX="-1.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ЧТО  С  ПОГОДОЙ?" textAlignment="CENTER" wrappingWidth="405.9999694824219">
+               <font>
+                  <Font name="Times New Roman Bold" size="26.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Button fx:id="getSpb" layoutX="244.0" layoutY="276.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" text="СЕЙЧАС В ПИТЕРЕ" textAlignment="CENTER" textFill="#433065">
+         <font>
+            <Font name="Times New Roman Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="getWorld" layoutX="244.0" layoutY="351.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" text="СЕЙЧАС В МИРЕ" textAlignment="CENTER" textFill="#433065">
+         <font>
+            <Font name="Times New Roman Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="getForecast" layoutX="244.0" layoutY="432.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" text="НА 5 ДНЕЙ ВПЕРЕД..." textAlignment="CENTER" textFill="#433065">
+         <font>
+            <Font name="Times New Roman Bold" size="11.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
