@@ -6,9 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import org.example.manage.OpenScene;
 import org.example.manage.ReceiveDateTime;
+import org.example.receive_json.JsonCurrentSpb;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static org.example.manage.ConstParam.*;
 
 public class ControllerCurrentSpb {
 
@@ -19,32 +22,39 @@ public class ControllerCurrentSpb {
     private URL location;
 
     @FXML
-    private Text temp_info, sunrise, cityName, data_time,
-            sunset, description, wind_info;
+    private Text tempInfo, sunrise, cityName, dataTime,
+            sunset, description, windInfo;
 
     @FXML
-    private Button to_return;
+    private Button toReturn;
 
+    JsonCurrentSpb jsonConnect = new JsonCurrentSpb();
 
     @FXML
     void initialize() {
         cityName.setText("Санкт-Петербург");
 
-        data_time.setText(ReceiveDateTime.getCurrentShortDate() +
+        dataTime.setText(ReceiveDateTime.getCurrentShortDate() +
                 ", " + ReceiveDateTime.getCurrentTime());
 
         showWeather();
 
-        to_return.setOnAction(e -> {
-            to_return.getScene().getWindow().hide();
+        toReturn.setOnAction(e -> {
+            toReturn.getScene().getWindow().hide();
             OpenScene.openScene("/fxml/weather_start.fxml");
         });
 
     }
 
-
-    //Порядок отображения сведений о погоде в текущем городе
+    //Порядок отображения сведений о погоде в СПб
     private void showWeather() {
+        jsonConnect.getWeatherJson();
+        tempInfo.setText(jsonConnect.getTemp());
+        description.setText(jsonConnect.getDesc());
+        windInfo.setText(jsonConnect.getWind());
+        sunrise.setText(SUNRISE + jsonConnect.getSunrise());
+        sunset.setText(SUNSET + jsonConnect.getSunset());
+
 
     }
 

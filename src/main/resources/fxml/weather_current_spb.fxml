@@ -19,12 +19,12 @@
                   <Font name="Times New Roman Bold" size="26.0" />
                </font>
             </Text>
-            <Text fx:id="data_time" fill="#000000" layoutX="-1.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="399.0">
+            <Text fx:id="dataTime" fill="#000000" layoutX="-1.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="399.0">
                <font>
                   <Font name="Times New Roman Bold" size="20.0" />
                </font>
             </Text>
-            <Button fx:id="to_return" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" text="&lt;&lt; назад">
+            <Button fx:id="toReturn" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" text="&lt;&lt; назад">
                <font>
                   <Font name="Times New Roman" size="12.0" />
                </font>
@@ -33,7 +33,7 @@
       </AnchorPane>
       <VBox layoutX="22.0" layoutY="145.0" prefHeight="250.0" prefWidth="252.0">
          <children>
-            <Text fx:id="temp_info" fill="#000000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
+            <Text fx:id="tempInfo" fill="#000000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
                <font>
                   <Font name="Times New Roman Bold" size="22.0" />
                </font>
@@ -53,7 +53,7 @@
                   <Font name="Times New Roman Bold" size="22.0" />
                </font>
             </Text>
-            <Text fx:id="wind_info" fill="#000000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
+            <Text fx:id="windInfo" fill="#000000" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.13671875">
                <font>
                   <Font name="Times New Roman Bold" size="22.0" />
                </font>

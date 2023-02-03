@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ControllerStart">
@@ -16,12 +14,12 @@
       </ImageView>
       <AnchorPane layoutY="-1.0" prefHeight="135.0" prefWidth="406.0">
          <children>
-            <Text fx:id="current_date" fill="#54676b" layoutX="24.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="137.13671875">
+            <Text fx:id="currentDate" fill="#54676b" layoutX="24.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="137.13671875">
                <font>
                   <Font name="Times New Roman Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="current_time" fill="#54676b" layoutX="248.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="137.13671875">
+            <Text fx:id="currentTime" fill="#54676b" layoutX="248.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="137.13671875">
                <font>
                   <Font name="Times New Roman Bold" size="14.0" />
                </font>
