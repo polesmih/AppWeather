@@ -30,7 +30,6 @@ public class OpenScene {
         Image image = new Image(iconStream);
         stage.getIcons().add(image);
 
-
         stage.setScene(new Scene(root));
         stage.show();
     }

@@ -21,16 +21,18 @@ import java.util.ResourceBundle;
 public class ControllerStart {
     @FXML
     private ResourceBundle resources;
-
     @FXML
     private URL location;
-
     @FXML
-    private Text currentDate, currentTime;
-
+    private Text currentDate;
     @FXML
-    private Button getWorld, getSpb, getForecast;
-
+    private Text currentTime;
+    @FXML
+    private Button getWorld;
+    @FXML
+    private Button getSpb;
+    @FXML
+    private Button getForecast;
 
     @FXML
     void initialize() {
@@ -44,7 +46,8 @@ public class ControllerStart {
         });
 
         getWorld.setOnAction(e -> {
-            showWarn();
+            getWorld.getScene().getWindow().hide();
+            OpenScene.openScene("/fxml/weather_current_search.fxml");
         });
 
         getForecast.setOnAction(e -> {

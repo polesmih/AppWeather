@@ -22,9 +22,19 @@ public class ControllerCurrentSpb {
     private URL location;
 
     @FXML
-    private Text tempInfo, sunrise, cityName, dataTime,
-            sunset, description, windInfo;
-
+    private Text tempInfo;
+    @FXML
+    private Text sunrise;
+    @FXML
+    private Text cityName;
+    @FXML
+    private Text dataTime;
+    @FXML
+    private Text sunset;
+    @FXML
+    private Text description;
+    @FXML
+    private Text windInfo;
     @FXML
     private Button toReturn;
 
@@ -54,7 +64,6 @@ public class ControllerCurrentSpb {
         windInfo.setText(jsonConnect.getWind());
         sunrise.setText(SUNRISE + jsonConnect.getSunrise());
         sunset.setText(SUNSET + jsonConnect.getSunset());
-
 
     }
 

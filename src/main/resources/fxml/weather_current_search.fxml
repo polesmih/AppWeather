@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ControllerCurrentSearch">
+   <children>
+      <ImageView fitHeight="457.0" fitWidth="479.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/back_current_search.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="-3.0" layoutY="4.0" prefHeight="108.0" prefWidth="399.0">
+         <children>
+            <Text fill="#fcf5f5" layoutX="40.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Какой город интересует?" textAlignment="CENTER" wrappingWidth="325.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="toReturn" layoutX="19.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="&lt;&lt; назад" textFill="#433065">
+               <font>
+                  <Font name="Times New Roman Bold" size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="help" layoutX="303.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="помощь" textFill="#433065">
+               <font>
+                  <Font name="Times New Roman Bold" size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="cityName" alignment="CENTER" layoutX="14.0" layoutY="142.0" prefHeight="36.0" prefWidth="252.0" promptText="Введите город" style="-fx-background-color: value0; -fx-border-color: #483D8B; -fx-text-fill: #433065">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Text fx:id="exceptionField" fill="#d31414" layoutX="30.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="337.13671875">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font></Text>
+
+      <Text fx:id="timeInfo" fill="#fffbfb" layoutX="15.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="269.13671875">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Text>
+
+      <Text fx:id="tempInfo" fill="#fffbfb" layoutX="15.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="269.13671875">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Text>
+
+      <Text fx:id="tempFeelsInfo" fill="#fffbfb" layoutX="15.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="269.13671875">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Text>
+
+      <Text fx:id="descriptionInfo" fill="#fffbfb" layoutX="15.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="359.13671875">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="pressInfo" fill="#fffbfb" layoutX="15.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="304.13671875">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="windInfo" fill="#fffbfb" layoutX="15.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="349.13671875">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="getWeather" layoutX="284.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="узнать погоду" textFill="#433065">
+         <font>
+            <Font name="Times New Roman Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="clear" layoutX="285.0" layoutY="165.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="очистить" textFill="#433065">
+         <font>
+            <Font name="Times New Roman Bold" size="11.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
