@@ -26,7 +26,7 @@ public class ControllerStart {
     private URL location;
 
     @FXML
-    private Text current_date, current_time;
+    private Text currentDate, currentTime;
 
     @FXML
     private Button getWorld, getSpb, getForecast;
@@ -35,7 +35,7 @@ public class ControllerStart {
     @FXML
     void initialize() {
 
-        current_date.setText(ReceiveDateTime.getCurrentDate());
+        currentDate.setText(ReceiveDateTime.getCurrentDate());
         getRunningTime();
 
         getSpb.setOnAction(e -> {
@@ -60,7 +60,7 @@ public class ControllerStart {
                     @Override
                     public void handle(ActionEvent event) {
                         final Calendar cal = Calendar.getInstance();
-                        current_time.setText(format.format(cal.getTime()));
+                        currentTime.setText(format.format(cal.getTime()));
                     }
                 }
         ));
@@ -77,5 +77,4 @@ public class ControllerStart {
                 "Приносим свои извинения за доставленные неудобства");
         alert.showAndWait();
     }
-
 }
