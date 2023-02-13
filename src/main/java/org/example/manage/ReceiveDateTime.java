@@ -1,7 +1,9 @@
 package org.example.manage;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
@@ -24,5 +26,14 @@ public class ReceiveDateTime {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm", Locale.getDefault());
         return time.format(formatter);
     }
+
+    public static String getSunEventPiter(long sunTime) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm", Locale.getDefault());
+        String formattedDtm = Instant.ofEpochSecond(sunTime)
+                .atZone(ZoneId.of("GMT+3"))
+                .format(formatter);
+        return formattedDtm;
+    }
+
 
 }
