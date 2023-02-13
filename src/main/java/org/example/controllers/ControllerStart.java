@@ -51,7 +51,8 @@ public class ControllerStart {
         });
 
         getForecast.setOnAction(e -> {
-            showWarn();
+            getWorld.getScene().getWindow().hide();
+            OpenScene.openScene("/fxml/weather_forecast.fxml");
         });
     }
 
@@ -71,13 +72,4 @@ public class ControllerStart {
         timeline.play();
     }
 
-    // заглушка на прогнозы погоды
-    public void showWarn() {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Внимание!");
-        alert.setHeaderText(null);
-        alert.setContentText("Этот раздел находится в разработке.\n" +
-                "Приносим свои извинения за доставленные неудобства");
-        alert.showAndWait();
-    }
 }

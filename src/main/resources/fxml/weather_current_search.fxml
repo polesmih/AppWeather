@@ -41,40 +41,6 @@
          <font>
             <Font name="Times New Roman Bold" size="14.0" />
          </font></Text>
-
-      <Text fx:id="timeInfo" fill="#fffbfb" layoutX="15.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="269.13671875">
-         <font>
-            <Font name="Times New Roman Bold" size="18.0" />
-         </font>
-      </Text>
-
-      <Text fx:id="tempInfo" fill="#fffbfb" layoutX="15.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="269.13671875">
-         <font>
-            <Font name="Times New Roman Bold" size="18.0" />
-         </font>
-      </Text>
-
-      <Text fx:id="tempFeelsInfo" fill="#fffbfb" layoutX="15.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="269.13671875">
-         <font>
-            <Font name="Times New Roman Bold" size="18.0" />
-         </font>
-      </Text>
-
-      <Text fx:id="descriptionInfo" fill="#fffbfb" layoutX="15.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="359.13671875">
-         <font>
-            <Font name="Times New Roman Bold" size="18.0" />
-         </font>
-      </Text>
-      <Text fx:id="pressInfo" fill="#fffbfb" layoutX="15.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="304.13671875">
-         <font>
-            <Font name="Times New Roman Bold" size="18.0" />
-         </font>
-      </Text>
-      <Text fx:id="windInfo" fill="#fffbfb" layoutX="15.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="349.13671875">
-         <font>
-            <Font name="Times New Roman Bold" size="18.0" />
-         </font>
-      </Text>
       <Button fx:id="getWeather" layoutX="284.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="узнать погоду" textFill="#433065">
          <font>
             <Font name="Times New Roman Bold" size="11.0" />
@@ -85,5 +51,14 @@
             <Font name="Times New Roman Bold" size="11.0" />
          </font>
       </Button>
+      <VBox layoutX="14.0" layoutY="207.0" prefHeight="236.0" prefWidth="366.0">
+         <children>
+            <Text fx:id="weatherInfo" fill="#fffbfb" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="364.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

@@ -11,7 +11,7 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 import org.example.manage.OpenScene;
 import org.example.manage.ReceiveDateTime;
-import org.example.receive_json.JsonCurrent;
+import org.example.receive_json.extendsJsonData.JsonCurrent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,7 +22,6 @@ public class ControllerCurrentSearch {
 
     JsonCurrent jsonConnect;
     String citySet;
-
     @FXML
     private ResourceBundle resources;
     @FXML
@@ -32,17 +31,7 @@ public class ControllerCurrentSearch {
     @FXML
     private Text exceptionField;
     @FXML
-    private Text timeInfo;
-    @FXML
-    private Text tempInfo;
-    @FXML
-    private Text tempFeelsInfo;
-    @FXML
-    private Text pressInfo;
-    @FXML
-    private Text descriptionInfo;
-    @FXML
-    private Text windInfo;
+    private Text weatherInfo;
     @FXML
     private Button getWeather;
     @FXML
@@ -51,7 +40,6 @@ public class ControllerCurrentSearch {
     private Button toReturn;
     @FXML
     private Button help;
-
 
     @FXML
     void initialize() {
@@ -75,16 +63,13 @@ public class ControllerCurrentSearch {
             OpenScene.openScene("/fxml/weather_start.fxml");
         });
 
-
         clear.setOnAction(e -> {
             reset();
         });
 
     }
 
-
-    // отображение информации
-    public void showHelp() {
+    private void showHelp() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Справка");
         alert.setHeaderText(null);
@@ -95,7 +80,6 @@ public class ControllerCurrentSearch {
         alert.showAndWait();
     }
 
-    // отображение сообщений об ошибках запроса города
     private void showErrors(String message) {
         exceptionField.setText(message);
         FadeTransition fadeIn = new FadeTransition(Duration.seconds(1), exceptionField);
@@ -115,7 +99,6 @@ public class ControllerCurrentSearch {
         });
     }
 
-    // Порядок получения информации о погоде в конкретном городе
     private void setWeatherInfo() {
         if (cityName.getText().equals("")) {
             showErrors(ENTER_CITY);
@@ -124,32 +107,18 @@ public class ControllerCurrentSearch {
                 exceptionField.setText("");
                 this.citySet = cityName.getText().trim();
                 jsonConnect = new JsonCurrent(citySet);
-                showWeather();
+                weatherInfo.setText("\nПогода на " + ReceiveDateTime.getCurrentTime() + " ч. " +
+                        ReceiveDateTime.getCurrentDate() + ":\n" +
+                        jsonConnect.getWeatherJson());
             } catch (Exception e) {
                 showErrors(NOT_FOUND);
             }
         }
     }
 
-
-    //Порядок отображения сведений о погоде в конкретном городе
-    private void showWeather() {
-        timeInfo.setText("погода на " + ReceiveDateTime.getCurrentTime() + " ч. " +
-                ReceiveDateTime.getCurrentShortDate() + ":");
-        jsonConnect.getWeatherJson();
-        tempFeelsInfo.setText(FEELS + jsonConnect.getFeels());
-        pressInfo.setText(PRESS + jsonConnect.getPress());
-        descriptionInfo.setText(jsonConnect.getDesc());
-        windInfo.setText(WIND + jsonConnect.getWind());
-    }
-
     private void reset() {
         cityName.setText("");
-        timeInfo.setText("");
-        tempInfo.setText("");
-        tempFeelsInfo.setText("");
-        pressInfo.setText("");
-        descriptionInfo.setText("");
-        windInfo.setText("");
+        weatherInfo.setText("");
+
     }
 }
