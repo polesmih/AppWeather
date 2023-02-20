@@ -9,16 +9,15 @@ import java.util.Properties;
 @Data
 public class ConfigSettings {
     public static final String FILE_NAME = "config.properties";
-    private static ConfigSettings instance;
+    private static ConfigSettings instance = new ConfigSettings();
     private Properties properties;
     private String api;
     private String urlSpb;
     private String urlCurrent;
+    private String urlForecast;
 
     public static ConfigSettings getInstance() {
-        if (instance == null)
-            instance = new ConfigSettings();
-        return instance;
+         return instance;
     }
 
     {
@@ -46,10 +45,16 @@ public class ConfigSettings {
                 throw new RuntimeException("Url value is null");
             }
 
+            urlForecast = properties.getProperty("urlForecast");
+            if (urlForecast == null) {
+                throw new RuntimeException("Url value is null");
+            }
+
 
         } catch (RuntimeException | IOException e) {
             throw new RuntimeException("App initialisation error: " + e.getMessage());
         }
     }
+
 
 }

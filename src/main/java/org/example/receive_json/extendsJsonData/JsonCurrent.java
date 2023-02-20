@@ -1,5 +1,6 @@
 package org.example.receive_json.extendsJsonData;
 
+import lombok.Getter;
 import org.example.manage.ConfigSettings;
 import org.example.manage.ReceiveDateTime;
 import org.example.manage.WindDirection;
@@ -9,6 +10,7 @@ import org.json.JSONObject;
 
 import static org.example.manage.ConstParam.*;
 
+@Getter
 public class JsonCurrent extends JsonData {
 
     private final static ConfigSettings settings = ConfigSettings.getInstance();
@@ -60,35 +62,6 @@ public class JsonCurrent extends JsonData {
         data.append("Восход: ").append(this.sunrise).append(" / Закат: ").append(this.sunset);
 
         return data.toString();
-    }
-
-    @Override
-    public String getCity() {
-        return city;
-    }
-
-    public String getFeels() {
-        return feels;
-    }
-
-    public String getPress() {
-        return press;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public String getWind() {
-        return wind;
-    }
-
-    public String getSunrise() {
-        return sunrise;
-    }
-
-    public String getSunset() {
-        return sunset;
     }
 
 }

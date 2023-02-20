@@ -3,7 +3,6 @@ package org.example.receive_json;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -14,15 +13,20 @@ public class UrlContent {
 
         StringBuilder content = new StringBuilder();
 
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader
-                     (new URL(urlAdress).openConnection().getInputStream()))) {
+        try {
+            URL url = new URL(urlAdress);
+            URLConnection urlConnection = url.openConnection();
+
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
             String line;
 
             while ((line = bufferedReader.readLine()) != null) {
                 content.append(line).append("\n");
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+            bufferedReader.close();
+
+        } catch (Exception ignore) {
+
         }
         return content.toString();
     }
