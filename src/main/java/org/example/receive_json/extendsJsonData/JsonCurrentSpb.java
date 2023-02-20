@@ -1,25 +1,32 @@
-package org.example.receive_json;
+package org.example.receive_json.extendsJsonData;
 
+import org.example.manage.ConfigSettings;
 import org.example.manage.ReceiveDateTime;
 import org.example.manage.WindDirection;
+import org.example.receive_json.GettingJson;
+import org.example.receive_json.JsonData;
 import org.json.JSONObject;
 import static org.example.manage.ConstParam.*;
 
 
-public class JsonCurrentSpb {
+public class JsonCurrentSpb extends JsonData {
 
+    private final static ConfigSettings settings = ConfigSettings.getInstance();
     private String temp;
     private String desc;
     private String wind;
     private String sunrise;
     private String sunset;
 
-    public void getWeatherJson() {
+    @Override
+    public String getWeatherJson() {
 
-        JSONObject json = GettingJson.receiveJson("http://api.openweathermap.org/data/2.5/weather?&q=Saint Petersburg,RU&appid=" +
-                API + "&units=metric&lang=ru");
+        JSONObject json = GettingJson.receiveJson(settings.getUrlSpb() +
+                settings.getApi() + "&units=metric&lang=ru");
 
         JSONObject jsonSpecific = json.getJSONObject("main");
+
+        StringBuilder data = new StringBuilder();
 
         this.temp = jsonSpecific.getInt("feels_like") + DEGREE;
 
@@ -36,7 +43,16 @@ public class JsonCurrentSpb {
         jsonSpecific = json.getJSONObject("sys");
         this.sunset = ReceiveDateTime.getSunEventPiter(jsonSpecific.getLong("sunset"));
 
+        data.append(this.temp).append("\n\n");
+        data.append(this.desc).append("\n\n");
+        data.append(this.wind).append("\n\n");
+        data.append("Восход: ").append(this.sunrise).append("\n\n");
+        data.append("Закат: ").append(this.sunset);
+
+        return data.toString();
+
     }
+
 
     public String getTemp() {
         return temp;

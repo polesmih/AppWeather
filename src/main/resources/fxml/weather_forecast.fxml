@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ControllerForecast">
+    <children>
+        <ImageView fitHeight="371.0" fitWidth="487.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/back_forecast.png" />
+            </image>
+        </ImageView>
+        <AnchorPane layoutX="5.0" layoutY="4.0" prefHeight="108.0" prefWidth="480.0">
+            <children>
+                <Text fill="#f4f4f5" layoutX="5.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Какой город интересует?" textAlignment="CENTER" wrappingWidth="473.13671875">
+                    <font>
+                        <Font name="Times New Roman Bold" size="20.0" />
+                    </font>
+                </Text>
+                <Button fx:id="toReturn" layoutX="19.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="&lt;&lt; назад" textFill="#433065">
+                    <font>
+                        <Font name="Times New Roman Bold" size="11.0" />
+                    </font>
+                </Button>
+                <Button fx:id="help" layoutX="388.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="помощь" textFill="#433065">
+                    <font>
+                        <Font name="Times New Roman Bold" size="11.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <TextField fx:id="cityName" alignment="CENTER" layoutX="14.0" layoutY="119.0" prefHeight="36.0" prefWidth="252.0" promptText="Введите город" style="-fx-background-color: value0; -fx-border-color: #483D8B; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #ffffff;">
+            <font>
+                <Font name="Times New Roman Bold" size="18.0" />
+            </font>
+        </TextField>
+        <Text fx:id="exceptionField" fill="#d31414" layoutX="5.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="479.9999694824219">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0" />
+            </font></Text>
+        <Button fx:id="getWeather" layoutX="282.0" layoutY="124.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="узнать погоду" textFill="#433065">
+            <font>
+                <Font name="Times New Roman Bold" size="11.0" />
+            </font>
+        </Button>
+        <Button fx:id="clear" layoutX="384.0" layoutY="125.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="очистить" textFill="#433065">
+            <font>
+                <Font name="Times New Roman Bold" size="11.0" />
+            </font>
+        </Button>
+      <VBox layoutX="14.0" layoutY="187.0" prefHeight="178.0" prefWidth="462.0">
+         <children>
+            <Text fx:id="forecast" fill="#fefeff" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="461.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      
+    </children>
+</AnchorPane>

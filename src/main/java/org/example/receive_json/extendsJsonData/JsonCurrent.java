@@ -1,14 +1,18 @@
-package org.example.receive_json;
+package org.example.receive_json.extendsJsonData;
 
+import org.example.manage.ConfigSettings;
 import org.example.manage.ReceiveDateTime;
 import org.example.manage.WindDirection;
+import org.example.receive_json.GettingJson;
+import org.example.receive_json.JsonData;
 import org.json.JSONObject;
 
 import static org.example.manage.ConstParam.*;
 
-public class JsonCurrent {
+public class JsonCurrent extends JsonData {
+
+    private final static ConfigSettings settings = ConfigSettings.getInstance();
     private final String city;
-    private String temp;
     private String feels;
     private String press;
     private String desc;
@@ -21,14 +25,15 @@ public class JsonCurrent {
         this.city = city;
     }
 
-    public void getWeatherJson() {
+    @Override
+    public String getWeatherJson() {
 
-        JSONObject json = GettingJson.receiveJson("http://api.openweathermap.org/data/2.5/weather?&q="
-                + city + "&appid=" + API + "&units=metric&lang=ru");
+        JSONObject json = GettingJson.receiveJson(settings.getUrlCurrent()
+                + city + "&appid=" + settings.getApi() + "&units=metric&lang=ru");
 
         JSONObject jsonSpecific = json.getJSONObject("main");
 
-        this.temp = jsonSpecific.getInt("temp") + DEGREE;
+        StringBuilder data = new StringBuilder();
 
         this.feels = jsonSpecific.getInt("feels_like") + DEGREE;
 
@@ -40,14 +45,26 @@ public class JsonCurrent {
         jsonSpecific = json.getJSONObject("wind");
         this.wind = jsonSpecific.get("speed").toString() + SPEED + ", " +
                 WindDirection.directionText(jsonSpecific.getDouble("deg")) +
-                        WindDirection.directionSymb(jsonSpecific.getDouble("deg"));
+                WindDirection.directionSymb(jsonSpecific.getDouble("deg"));
 
         jsonSpecific = json.getJSONObject("sys");
-        this.sunrise = ReceiveDateTime.getSunEventPiter(jsonSpecific.getLong("sunrise")) ;
+        this.sunrise = ReceiveDateTime.getSunEventPiter(jsonSpecific.getLong("sunrise"));
 
         jsonSpecific = json.getJSONObject("sys");
         this.sunset = ReceiveDateTime.getSunEventPiter(jsonSpecific.getLong("sunset"));
 
+        data.append("Температура: ").append(this.feels).append("\n");
+        data.append("Давление: ").append(this.press).append("\n");
+        data.append(this.desc).append("\n");
+        data.append("Ветер: ").append(this.wind).append("\n");
+        data.append("Восход: ").append(this.sunrise).append(" / Закат: ").append(this.sunset);
+
+        return data.toString();
+    }
+
+    @Override
+    public String getCity() {
+        return city;
     }
 
     public String getFeels() {
@@ -66,5 +83,12 @@ public class JsonCurrent {
         return wind;
     }
 
+    public String getSunrise() {
+        return sunrise;
+    }
+
+    public String getSunset() {
+        return sunset;
+    }
 
 }
