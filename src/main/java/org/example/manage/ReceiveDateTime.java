@@ -1,10 +1,13 @@
 package org.example.manage;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Locale;
 
 public class ReceiveDateTime {
@@ -27,6 +30,19 @@ public class ReceiveDateTime {
                 .atZone(ZoneId.of("GMT+3"))
                 .format(formatter);
         return formattedDtm;
+    }
+
+    public static String formattingDateTime(String oldDateTime) {
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        try {
+            Date date = dt.parse(oldDateTime);
+            SimpleDateFormat newDateTime = new SimpleDateFormat("dd.MM.yyyy в HH:mm");
+            oldDateTime = newDateTime.format(date);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+
+        return oldDateTime;
     }
 
 

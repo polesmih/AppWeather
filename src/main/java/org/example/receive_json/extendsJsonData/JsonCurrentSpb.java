@@ -1,5 +1,6 @@
 package org.example.receive_json.extendsJsonData;
 
+import lombok.Getter;
 import org.example.manage.ConfigSettings;
 import org.example.manage.ReceiveDateTime;
 import org.example.manage.WindDirection;
@@ -9,6 +10,7 @@ import org.json.JSONObject;
 import static org.example.manage.ConstParam.*;
 
 
+@Getter
 public class JsonCurrentSpb extends JsonData {
 
     private final static ConfigSettings settings = ConfigSettings.getInstance();
@@ -51,27 +53,6 @@ public class JsonCurrentSpb extends JsonData {
 
         return data.toString();
 
-    }
-
-
-    public String getTemp() {
-        return temp;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public String getWind() {
-        return wind;
-    }
-
-    public String getSunrise() {
-        return sunrise;
-    }
-
-    public String getSunset() {
-        return sunset;
     }
 
 }
