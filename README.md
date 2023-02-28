@@ -18,7 +18,8 @@
 Возможна настройка отображения погоды в текущем городе нахождения пользователя (замена функции отображения в Санкт-Петербурге) посредством коректировки кода:  
 1. В классе org.example.controllers.ControllerCurrentSpb указать корректный cityName:  
 ![1](https://user-images.githubusercontent.com/77875474/221778893-e9374dc8-f862-4287-b63d-d01a996ab376.jpg)  
-2. В файле config.properties указать корректный url с API OpenWeatherMap.  
+2. В файле config.properties указать корректный url с API OpenWeatherMap:  
+![3](https://user-images.githubusercontent.com/77875474/221782273-4db55dc8-8edc-44bf-8049-a11d1abc4c64.jpg)  
 3. В файле weather_start.fxml указать корректное наименование города нахождения пользователя:  
 ![2](https://user-images.githubusercontent.com/77875474/221780431-217a1ce7-2bfb-4f89-861d-bf12ac982a30.jpg)  
 
