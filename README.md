@@ -21,7 +21,8 @@
 2. В файле config.properties указать корректный url с API OpenWeatherMap:  
 ![3](https://user-images.githubusercontent.com/77875474/221782273-4db55dc8-8edc-44bf-8049-a11d1abc4c64.jpg)  
 3. В файле weather_start.fxml указать корректное наименование города нахождения пользователя:  
-![2](https://user-images.githubusercontent.com/77875474/221780431-217a1ce7-2bfb-4f89-861d-bf12ac982a30.jpg)  
+![2](https://user-images.githubusercontent.com/77875474/221782677-b600e79b-de70-429d-8ce5-762e8ffb662b.jpg)
+  
 
  
 
@@ -35,7 +36,7 @@
 4. Ошибка при вводе пустой строки поиска:  
 ![Ошибка ввода пустой строки поиска города](https://user-images.githubusercontent.com/77875474/221773056-789f871b-1883-4d6a-8082-8426a62fe16b.jpg)  
 5. Ошибка при вводе несуществующего города:  
-![Ошибка ввода пустой строки поиска города](https://user-images.githubusercontent.com/77875474/221773101-a3970a9e-aee5-4e7f-955e-b30af9ecc142.jpg)  
+![Ошибка ввода несуществующего города](https://user-images.githubusercontent.com/77875474/221782731-8b94ec84-614f-424b-a828-c4864028bf3e.jpg)    
 6. Вызываемое по запросу окно помощи:  
 ![Окно помощи](https://user-images.githubusercontent.com/77875474/221773221-637815b9-0af8-45d6-b29d-f058fe6b432c.jpg)  
 7. Прогноз погоды на будущие 5 дней в городе по запросу:  
