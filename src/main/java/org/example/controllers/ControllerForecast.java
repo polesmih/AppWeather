@@ -66,10 +66,7 @@ public class ControllerForecast {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Справка");
         alert.setHeaderText(null);
-        alert.setContentText("Название города можно вводить на русском " +
-                "либо на английском языке.\n" +
-                "Для уточнения страны, через запятую необходимо ввести ее аббревитуру по-английски.\n" +
-                "Например: рим, it");
+        alert.setContentText(HELP);
         alert.showAndWait();
     }
 
